@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import theme from '../theme';
 
-const NavLink = styled.a`
+const NavLink = styled.div`
 
+  a {
     text-decoration: none;
     display: block;
     padding: 20px 30px;
@@ -18,6 +19,7 @@ const NavLink = styled.a`
       font-weight: 800;
       font-size: 16px;
     }
+  }
 
     svg {
       margin-right: 10px;
@@ -26,10 +28,14 @@ const NavLink = styled.a`
     }
 
   @media (max-width: 768px) {
+
+    a {
       padding: 20px 0;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+    }
+
 
     svg {
       margin-right: 0;
