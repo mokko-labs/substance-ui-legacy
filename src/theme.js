@@ -1,7 +1,9 @@
 
+import {rgb, adjustHue} from 'polished';
+
 const pallete = {
-  primary: '#00A8F3',
-  secondary: '#FFCF00',
+  primary: '#E20049',
+  secondary: '#0DCEDA',
   monochrome: '#000',
   success: '#93E522',
   warning: '#FFCF00',
@@ -14,7 +16,11 @@ const theme = {
   colors: pallete,
 
   card: {
-    bg: '#ff0000'
+    bg: '#FFFFFF'
+  },
+
+  sidebar: {
+    bg: '#FFFFFF'
   },
 
   button: {
@@ -26,12 +32,12 @@ const theme = {
     },
     primary: {
       bg: pallete.primary,
-      gradient: 'linear-gradient(118.23deg, #00A8F3 0%, #59C1D3 100%)',
+      gradient: `linear-gradient(118.23deg, ${pallete.primary} 0%, ${adjustHue(-10, pallete.primary)} 100%)`,
       color: 'white'
     },
     secondary: {
       bg: pallete.secondary,
-      gradient: 'linear-gradient(322.34deg, #FFCF00 0%, #FFB100 100%)',
+      gradient: `linear-gradient(322.34deg, ${pallete.secondary} 0%, ${adjustHue(-10, pallete.secondary)} 100%)`,
       color: 'white'
     },
     monochrome: {
@@ -41,12 +47,12 @@ const theme = {
     },
     success: {
       bg: pallete.success,
-      gradient: 'linear-gradient(322.34deg, #93E522 0%, #6CBB00 100%)',
+      gradient: pallete.success,
       color: 'white'
     },
     warning: {
       bg: pallete.warning,
-      gradient: 'linear-gradient(322.34deg, #FFCF00 0%, #FFB100 100%)',
+      gradient: pallete.warning,
       color: 'white'
     },
     error: {

@@ -4,7 +4,7 @@ import theme from '../theme';
 const defaultShadow = '0 12px 26px 5px rgba(202, 202, 202, 0.32)';
 
 const Card = styled.div`
-  background: white;
+  background: ${theme.card.bg};
   padding: 20px;
   margin: 20px;
   box-shadow: ${props => props.static ? defaultShadow : '0 4px 10px rgba(202, 202, 202, 0.64)'};
