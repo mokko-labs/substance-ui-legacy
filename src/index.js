@@ -1,4 +1,6 @@
 import Button from './elements/Button';
+import NavLink from './elements/NavLink';
+
 import Card from './containers/Card';
 import SideBar from './containers/SideBar';
 import Padded from './containers/Padded';
@@ -9,5 +11,6 @@ module.exports = {
   Card,
   SideBar,
   Padded,
-  MainPanel
+  MainPanel,
+  NavLink
 };
