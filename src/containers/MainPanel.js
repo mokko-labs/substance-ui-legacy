@@ -5,10 +5,14 @@ const MainPanel = styled.div`
   margin-left: 200px;
   display: block;
   padding: 60px 100px;
-
-  @media (max-width: 768px) {
-    margin-left: 64px;
-  }
 `;
+
+/* Responsive Bit (based on SideBar)
+
+@media (max-width: 768px) {
+  margin-left: 64px;
+}
+
+*/
 
 export default MainPanel;

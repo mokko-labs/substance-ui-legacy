@@ -2,11 +2,11 @@
 import {rgb, adjustHue} from 'polished';
 
 const pallete = {
-  primary: '#E20049',
-  secondary: '#0DCEDA',
+  primary: '#6ABDF8',
+  secondary: '#EA4466',
   monochrome: '#000',
   success: '#93E522',
-  warning: '#FFCF00',
+  warning: '#FADB4A',
   error: '#FF3E00',
   default: '#C1C1C1'
 };
