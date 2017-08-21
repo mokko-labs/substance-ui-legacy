@@ -82,7 +82,7 @@ const buttonSizing = function(props) {
     selection.v -= 2;
     selection.h -= 2;
   }
-  
+
 
   return `
     font-size: ${selection.fontSize}px;
