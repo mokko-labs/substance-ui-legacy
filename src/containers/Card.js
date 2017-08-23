@@ -10,6 +10,7 @@ const Card = styled.div`
   border-radius: ${props => props.square ? '0' : '6px'};
   transition: box-shadow 0.3s ease;
   margin-bottom: 20px;
+  overflow: hidden;
 
   &:hover {
     box-shadow: ${defaultShadow};

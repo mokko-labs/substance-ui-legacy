@@ -10,6 +10,8 @@ import MainPanel from './containers/MainPanel';
 import List from './components/List';
 import ListItem from './elements/ListItem';
 
+import {Table, TableHead, TableBody, TableRow, TableCell} from './components/Table';
+
 import theme from './theme';
 
 module.exports = {
@@ -23,6 +25,12 @@ module.exports = {
 
   List,
   ListItem,
+
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
 
   theme
 };
