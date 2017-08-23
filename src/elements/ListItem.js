@@ -1,14 +1,21 @@
 import styled from 'styled-components';
 import React from 'react';
+import theme from '../theme';
 
 const ListItemStyled = styled.li`
   border-bottom: 1px solid #DADADA;
   padding-left: 30px; padding-right: 30px;
 
+  color: #343434;
   position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  transition: background 200ms ease, color 200ms ease;
 
   &:hover {
-    background: linear-gradient(322.34deg, #FFCF00 0%, #FFB100 100%);
+    background: ${theme.colors.primary};
     color: white;
   }
 
@@ -28,8 +35,8 @@ const ListItemStyled = styled.li`
   }
 
   .label {
-    padding-top: 26px;
-    padding-bottom: 26px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
     display: inline-block;
     vertical-align: middle;
