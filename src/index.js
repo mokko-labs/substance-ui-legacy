@@ -7,6 +7,9 @@ import SideBar from './containers/SideBar';
 import Padded from './containers/Padded';
 import MainPanel from './containers/MainPanel';
 
+import List from './components/List';
+import ListItem from './elements/ListItem';
+
 import theme from './theme';
 
 module.exports = {
@@ -18,7 +21,8 @@ module.exports = {
   MainPanel,
   NavLink,
 
-
+  List,
+  ListItem,
 
   theme
 };
