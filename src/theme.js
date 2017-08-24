@@ -23,6 +23,12 @@ const theme = {
     bg: '#FFFFFF'
   },
 
+  animations: {
+    fast: 250,
+    medium: 500,
+    slow: 1000
+  },
+
   button: {
 
     default: {

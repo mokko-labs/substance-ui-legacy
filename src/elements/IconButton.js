@@ -1,23 +1,23 @@
 import styled from 'styled-components';
+import theme from '../theme';
 
-export default styled.div`
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
+function iconButtonColor(props) {
+  var selection = theme.button[props.color || 'default'];
+  return `color: ${selection.bg}`;
+}
 
+export default styled.button`
+    display: inline-block;
+    margin: 4px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: ${props => props.fontSize || '20px'};
+    transition: all ${theme.animations.fast}ms ease;
+    ${props => iconButtonColor(props)};
 
-    svg {
-      margin-right: 10px;
-      display: inline-block;
-      font-size: 20px;
-      color: #a5a4a4;
-      cursor: pointer;
-      transition: all 500ms ease;
-      &:hover {
-        color: #333;
-      }
-
-
+    &:hover {
+      color: #333;
     }
-
 `;
