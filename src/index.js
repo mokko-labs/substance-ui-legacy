@@ -9,7 +9,7 @@ import MainPanel from './containers/MainPanel';
 
 import List from './components/List';
 import ListItem from './elements/ListItem';
-
+import SubstanceForm from './elements/form';
 import {Table, TableHead, TableBody, TableRow, TableCell} from './components/Table';
 
 import theme from './theme';
@@ -23,8 +23,10 @@ module.exports = {
   MainPanel,
   NavLink,
 
+
   List,
   ListItem,
+  SubstanceForm,
 
   Table,
   TableHead,
