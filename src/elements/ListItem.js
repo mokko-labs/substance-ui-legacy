@@ -12,10 +12,10 @@ const ListItemStyled = styled.li`
   font-weight: 600;
   font-size: 16px;
 
-  transition: background 200ms ease, color 200ms ease;
+  transition: background ${props => props.theme.animations.fast} ease, color 200ms ease;
 
   &:hover {
-    background: ${theme.colors.primary};
+    background: ${props => props.theme.colors.primary};
     color: white;
   }
 
@@ -53,6 +53,9 @@ const ListItemStyled = styled.li`
   }
 `;
 
+ListItemStyled.defaultProps = {
+  theme: theme
+};
 
 export default function(props){
 

@@ -12,6 +12,10 @@ import ListItem from './elements/ListItem';
 import SubstanceForm from './elements/form';
 import {Table, TableHead, TableBody, TableRow, TableCell} from './components/Table';
 
+import {makeTheme} from './utils';
+
+import {ThemeProvider} from 'styled-components';
+
 import theme from './theme';
 
 module.exports = {
@@ -34,5 +38,7 @@ module.exports = {
   TableRow,
   TableCell,
 
-  theme
+  theme,
+  makeTheme,
+  ThemeProvider
 };

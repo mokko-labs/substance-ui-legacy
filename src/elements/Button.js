@@ -2,10 +2,15 @@
 import styled from 'styled-components';
 import {darken, lighten, transparentize} from 'polished';
 import theme from '../theme';
+import {adjustHue} from 'polished';
 
-const outlineButton = function(props) {
+function makeGradient(color) {
+  return `linear-gradient(322.34deg, ${color} 0%, ${adjustHue(-10, color)} 100%)`;
+}
 
-  var selection = theme.button[props.color || 'default'];
+function outlineButton(props) {
+
+  var selection = props.theme.colors[props.color || 'default'];
 
   var hoverMethod = `
    &:hover {
@@ -16,16 +21,16 @@ const outlineButton = function(props) {
   if(props.alt) {
     hoverMethod = `
     &:hover {
-      background: ${selection.bg};
+      background: ${selection};
       color: white;
     }
     `
   }
 
   return `
-    border: 2px solid ${selection.bg};
+    border: 2px solid ${selection};
     background: transparent;
-    color: ${selection.bg};
+    color: ${selection};
     ${hoverMethod};
     &:active {
       opacity: 0.33;
@@ -33,17 +38,17 @@ const outlineButton = function(props) {
   `
 }
 
-const buttonColoring = function(props) {
+function buttonColoring(props) {
 
   if(props.outline) {
     return outlineButton(props);
   }
 
-  var selection = theme.button[props.color || 'default'];
+  var selection = props.theme.colors[props.color || 'default'];
 
   return `
-    background: ${selection.gradient};
-    color: ${selection.color};
+    background: ${makeGradient(selection)};
+    color: ${selection == 'default' ? '#333' : 'white'};
 
     &:hover {
       opacity: 0.8;
@@ -106,5 +111,10 @@ const Button = styled.button`
     cursor: not-allowed` : ``
   }
 `;
+
+
+Button.defaultProps = {
+  theme: theme
+}
 
 export default Button;

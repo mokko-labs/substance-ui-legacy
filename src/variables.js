@@ -1,6 +1,6 @@
 
-const theme = {
 
+export default {
   colors: {
     primary: '#6ABDF8',
     secondary: '#EA4466',
@@ -9,22 +9,11 @@ const theme = {
     warning: '#FADB4A',
     error: '#FF3E00',
     default: '#C1C1C1'
-
-  },
-
-  card: {
-    bg: '#FFFFFF'
-  },
-
-  sidebar: {
-    bg: '#FFFFFF'
   },
 
   animations: {
-    fast: '250ms',
-    medium: '500ms',
-    slow: '1000ms'
+    fast: 250,
+    medium: 500,
+    slow: 1000
   }
 }
-
-export default theme;
