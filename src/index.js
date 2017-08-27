@@ -9,7 +9,7 @@ import MainPanel from './containers/MainPanel';
 
 import List from './components/List';
 import ListItem from './elements/ListItem';
-import SubstanceForm from './elements/form';
+import {Form, Input, Label} from './elements/FormElements';
 import {Table, TableHead, TableBody, TableRow, TableCell} from './components/Table';
 
 import {makeTheme} from './utils';
@@ -30,7 +30,10 @@ module.exports = {
 
   List,
   ListItem,
-  SubstanceForm,
+
+  Form,
+  Input,
+  Label,
 
   Table,
   TableHead,

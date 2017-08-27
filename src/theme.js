@@ -12,6 +12,12 @@ const theme = {
 
   },
 
+  fontSizes: {
+    small: '12px',
+    medium: '14px',
+    large: '16px'
+  },
+
   card: {
     bg: '#FFFFFF'
   },
