@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const MainPanel = styled.div`
-  background: #fafafa;
-  margin-left: 200px;
-  display: block;
-  padding: 60px 100px;
+  margin-left: ${props => props.theme.sidebar.width +'px' || '200px'};
+  background-color: ${props => props.backgroundColor || '#fff' };
+  min-height: 100vh;
 `;
 
 /* Responsive Bit (based on SideBar)

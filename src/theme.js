@@ -1,6 +1,4 @@
-
 const theme = {
-
   colors: {
     primary: '#6ABDF8',
     secondary: '#EA4466',
@@ -23,7 +21,8 @@ const theme = {
   },
 
   sidebar: {
-    bg: '#FFFFFF'
+    bg: '#FFFFFF',
+    width: 200
   },
 
   animations: {
@@ -31,6 +30,6 @@ const theme = {
     medium: '500ms',
     slow: '1000ms'
   }
-}
+};
 
 export default theme;
