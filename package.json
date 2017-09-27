@@ -20,7 +20,9 @@
     "url": "https://github.com/mokko-lab/substance-ui/issues"
   },
   "homepage": "https://github.com/mokko-lab/substance-ui#readme",
-  "dependencies": {},
+  "dependencies": {
+    "victory": "^0.22.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",

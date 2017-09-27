@@ -20,7 +20,6 @@ const Column = styled.div`
 @media (max-width: 768px) {
   margin-left: 64px;
 }
-
 */
 export {
   Row,

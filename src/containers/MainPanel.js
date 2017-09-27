@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../theme';
 
 const MainPanel = styled.div`
   margin-left: ${props => props.theme.sidebar.width +'px' || '200px'};
@@ -13,5 +14,9 @@ const MainPanel = styled.div`
 }
 
 */
+
+MainPanel.defaultProps = {
+  theme: theme
+};
 
 export default MainPanel;

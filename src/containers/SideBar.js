@@ -19,4 +19,8 @@ const SideBar = styled.div`
 
 */
 
+SideBar.defaultProps = {
+  theme: theme
+};
+
 export default SideBar;
