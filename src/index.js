@@ -21,10 +21,10 @@ export { Row, Column } from './components/Grid';
 export { default as Heading } from './components/Heading';
 export { default as Paragraph } from './components/Paragraph';
 
-export { default as ChartStack } from './components/ChartStack';
-export { default as Chart } from './components/Chart';
 export { default as AreaChart } from './components/AreaChart';
 export { default as BarChart } from './components/BarChart';
+export { default as StackChart } from './components/StackChart';
+export { default as PieChart } from './components/PieChart';
 
 
 

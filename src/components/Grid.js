@@ -6,6 +6,7 @@ const Row = styled.div`
 
   &>div {
      padding: ${(props)=>props.gutter ? (props.gutter+'px 0 0 ' + props.gutter+'px') : 0};
+     margin-bottom: ${(props)=> props.gutter/2+'px' || 0};
   }
 `;
 

@@ -1,4 +1,4 @@
-import { assign } from "lodash";
+import {assign} from "lodash";
 
 // *
 // * Colors
@@ -13,13 +13,13 @@ const colors = [
   "#f0f0f0"
 ];
 
-const charcoal = "#3D3D3D";
+const charcoal = "#C2C2C2";
 // *
 // * Typography
 // *
-const sansSerif = "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif";
+const sansSerif = ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 const letterSpacing = "normal";
-const fontSize = 10
+const fontSize = 9
 // *
 // * Layout
 // *
@@ -35,21 +35,26 @@ const baseProps = {
 const baseLabelStyles = {
   fontFamily: sansSerif,
   fontSize,
+  fontWeight: 300,
   letterSpacing,
   padding: 5,
-  fill: charcoal,
+  fill: '#5F5F5F',
   stroke: "transparent"
 };
 
-const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
+const centeredLabelStyles = assign({
+  textAnchor: "middle"
+}, baseLabelStyles);
 // *
 // * Strokes
 // *
-const strokeLinecap = "round";
-const strokeLinejoin = "round";
+const strokeDasharray = "1, 4";
+
+const strokeLinecap = "square";
+const strokeLinejoin = "square";
 
 export default {
-  area: assign({
+  area : assign({
     style: {
       data: {
         fill: charcoal
@@ -57,21 +62,23 @@ export default {
       labels: centeredLabelStyles
     }
   }, baseProps),
-  axis: assign({
+  axis : assign({
     style: {
       axis: {
         fill: "transparent",
         stroke: charcoal,
-        strokeWidth: 1,
+        strokeWidth: 0.5,
         strokeLinecap,
         strokeLinejoin
       },
-      axisLabel: assign({}, centeredLabelStyles, {
-        padding: 25
-      }),
+      axisLabel: assign({}, centeredLabelStyles, {padding: 25}),
       grid: {
         fill: "transparent",
-        stroke: "transparent",
+        stroke: '#ccc',
+        opacity:0.8,
+        strokeDasharray,
+        strokeLinecap,
+        strokeLinejoin,
         pointerEvents: "none"
       },
       ticks: {
@@ -82,7 +89,7 @@ export default {
       tickLabels: baseLabelStyles
     }
   }, baseProps),
-  bar: assign({
+  bar : assign({
     style: {
       data: {
         fill: charcoal,
@@ -92,7 +99,7 @@ export default {
       labels: baseLabelStyles
     }
   }, baseProps),
-  candlestick: assign({
+  candlestick : assign({
     style: {
       data: {
         stroke: charcoal,
@@ -105,8 +112,8 @@ export default {
       negative: charcoal
     }
   }, baseProps),
-  chart: baseProps,
-  errorbar: assign({
+  chart : baseProps,
+  errorbar : assign({
     style: {
       data: {
         fill: "transparent",
@@ -116,10 +123,10 @@ export default {
       labels: centeredLabelStyles
     }
   }, baseProps),
-  group: assign({
+  group : assign({
     colorScale: colors
   }, baseProps),
-  line: assign({
+  line : assign({
     style: {
       data: {
         fill: "transparent",
@@ -129,21 +136,21 @@ export default {
       labels: centeredLabelStyles
     }
   }, baseProps),
-  pie: {
+  pie : {
     style: {
       data: {
         padding: 10,
         stroke: "transparent",
         strokeWidth: 1
       },
-      labels: assign({}, baseLabelStyles, { padding: 20 })
+      labels: assign({}, baseLabelStyles, {padding: 20})
     },
     colorScale: colors,
     width: 400,
     height: 400,
     padding: 50
   },
-  scatter: assign({
+  scatter : assign({
     style: {
       data: {
         fill: charcoal,
@@ -153,11 +160,14 @@ export default {
       labels: centeredLabelStyles
     }
   }, baseProps),
-  stack: assign({
+  stack : assign({
     colorScale: colors
   }, baseProps),
-  tooltip: {
-    style: assign({}, centeredLabelStyles, { padding: 5, pointerEvents: "none" }),
+  tooltip : {
+    style: assign({}, centeredLabelStyles, {
+      padding: 5,
+      pointerEvents: "none"
+    }),
     flyoutStyle: {
       stroke: charcoal,
       strokeWidth: 1,
@@ -167,14 +177,17 @@ export default {
     cornerRadius: 5,
     pointerLength: 10
   },
-  voronoi: assign({
+  voronoi : assign({
     style: {
       data: {
         fill: "transparent",
         stroke: "transparent",
         strokeWidth: 0
       },
-      labels: assign({}, centeredLabelStyles, { padding: 5, pointerEvents: "none" }),
+      labels: assign({}, centeredLabelStyles, {
+        padding: 5,
+        pointerEvents: "none"
+      }),
       flyout: {
         stroke: charcoal,
         strokeWidth: 1,
@@ -183,7 +196,7 @@ export default {
       }
     }
   }, baseProps),
-  legend: {
+  legend : {
     colorScale: colors,
     gutter: 10,
     orientation: "vertical",
@@ -193,7 +206,7 @@ export default {
         type: "circle"
       },
       labels: baseLabelStyles,
-      title: assign({}, baseLabelStyles, { padding: 5 })
+      title: assign({}, baseLabelStyles, {padding: 5})
     }
   }
 };
