@@ -19,6 +19,10 @@ const Paragraph = styled.p`
         return '1.250em';
       case 'large':
         return '1.375em';
+      case 'x-large':
+        return '1.875em';
+      case 'xx-large':
+        return '2.5em';
       default:
         return '1em';
     }

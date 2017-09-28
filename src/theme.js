@@ -27,7 +27,18 @@ const theme = {
 
   sidebar: {
     bg: '#FFFFFF',
-    width: 200
+    width: 200,
+
+    links: {
+      padding: '0px 40px',
+      fontSize: 15,
+      fontWeight: 300,
+      lineHeight: '50px',
+      color: '#888888',
+      activeFontSize: 22,
+      activeFontWeight: 800,
+      activeColor: '#313131'
+    },
   },
 
   animations: {

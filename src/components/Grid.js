@@ -2,16 +2,21 @@ import styled from 'styled-components';
 
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  position: relative;
   margin: ${(props)=>props.gutter ? (-props.gutter+'px 0 0 ' + -props.gutter+'px') : 0};
 
   &>div {
-     padding: ${(props)=>props.gutter ? (props.gutter+'px 0 0 ' + props.gutter+'px') : 0};
-     margin-bottom: ${(props)=> props.gutter/2+'px' || 0};
+    box-sizing: border-box;
+    position: relative;
+    flex: ${(props)=>props.columnsCount ? '0 0 '+(100/props.columnsCount)+'%'  : 1};
+    padding: ${(props)=>props.gutter ? (props.gutter+'px 0 0 ' + props.gutter+'px') : 0};
+    /*margin-bottom: ${(props)=> props.gutter/2+'px' || 0}; */
   }
 `;
 
 const Column = styled.div`
-  flex: 1;
   display: ${(props)=>props.matchHeight ? 'flex' : 'block'};
 `;
 

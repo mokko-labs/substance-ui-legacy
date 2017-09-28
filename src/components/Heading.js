@@ -10,7 +10,7 @@ const H1 = styled.h1`
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
   font-size: 3.750em;
-  line-height: 1.5;
+  line-height: 1;
 `;
 const H2 = styled.h2`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -20,7 +20,7 @@ const H2 = styled.h2`
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
   font-size: 3.125em;
-  line-height: 1.5;
+  line-height: 1.1;
 `;
 const H3 = styled.h3`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -30,7 +30,7 @@ const H3 = styled.h3`
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
   font-size: 2.125em;
-  line-height: 1.5;
+  line-height: 1.1;
 `;
 const H4 = styled.h4`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -40,7 +40,7 @@ const H4 = styled.h4`
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
   font-size: 1.625em;
-  line-height: 1.5;
+  line-height: 1.2;
 `;
 const H5 = styled.h5`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};

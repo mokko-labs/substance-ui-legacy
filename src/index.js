@@ -12,12 +12,20 @@ export { default as MainPanel } from './containers/MainPanel';
 // Components
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';
+export { default as CoverImage } from './components/CoverImage';
+
 export { default as NavLink } from './components/NavLink';
+
 export { default as List } from './components/List';
 export { default as ListItem } from './components/ListItem';
+
 export { Form, Input, Label } from './components/FormElements';
+
 export { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table';
+
 export { Row, Column } from './components/Grid';
+export { Split, SplitColumn } from './components/Split';
+
 export { default as Heading } from './components/Heading';
 export { default as Paragraph } from './components/Paragraph';
 

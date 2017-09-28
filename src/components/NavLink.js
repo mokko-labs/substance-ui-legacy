@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import theme from '../theme';
+import styled, { withTheme } from 'styled-components';
 
 
 const NavLink = styled.div`
@@ -8,19 +7,22 @@ const NavLink = styled.div`
   a {
     text-decoration: none;
     display: block;
-    padding: 0 30px;
-    line-height: 64px;
-    color: #666;
-    font-size: 14px;
+    font-family: ${props => props.theme.fonts.heading};
+    padding:${props => props.theme.sidebar.links.padding || '0 30px'};
+    letter-spacing: 0.8px;
+    line-height:${props => props.theme.sidebar.links.lineHeight || '64px'};
+    color: ${props => props.theme.sidebar.links.color || '#666'};
+    font-weight: ${props => props.theme.sidebar.links.fontWeight || '400'};
+    font-size: ${props => props.theme.sidebar.links.fontSize+'px' || '16px'};;
     cursor: pointer;
     transition: all 100ms ease;
     &:hover {
       color: #333;
     }
     &.active {
-      color: #000;
-      font-weight: 800;
-      font-size: 24px;
+      color:  ${props => props.theme.sidebar.links.activeColor || '#666'};;
+      font-weight: ${props => props.theme.sidebar.links.activeFontWeight || '800'};
+      font-size:  ${props => props.theme.sidebar.links.activeFontSize+'px' || '24'};;
       svg {
         font-size: 24px;  // Do not scale the SVG.
       }
@@ -55,5 +57,4 @@ const NavLink = styled.div`
 }
 
 */
-
-export default NavLink;
+export default withTheme(NavLink);
