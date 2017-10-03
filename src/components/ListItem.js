@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import theme from '../theme';
 
-const ListItemStyled = styled.li`
-  border-bottom: 1px solid #DADADA;
+const ListItemStyled = styled.div`
   padding-left: 30px; padding-right: 30px;
 
   color: #343434;
@@ -11,12 +10,14 @@ const ListItemStyled = styled.li`
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
-
+  padding: 15px 20px;
   transition: background ${props => props.theme.animations.fast} ease, color 200ms ease;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    background: ${props => props.theme.colors.primary};
-    color: white;
+    background: ${props => props.hover ? props.theme.colors.primary : '#fff' };
+    color: ${props => props.hover ? 'white' : '' };
   }
 
   .leftIcon {
@@ -31,15 +32,32 @@ const ListItemStyled = styled.li`
     border-radius: 26px;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 20px;
+    margin-right: 15px;
   }
 
-  .label {
-    padding-top: 24px;
-    padding-bottom: 24px;
+  h6 {
+    margin:0;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: normal;
+  }
 
+  .listWrap,
+  .floater,
+  .label {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  .floater {
+    height:1px;
+  }
+
+  .subLabel {
+    font-size: 13px;
+    margin:0;
+    font-weight: normal;
+    opacity: 0.7;
   }
 
 
@@ -63,18 +81,16 @@ export default function(props){
     if(props.leftIcon) {
       return <span className="leftIcon">{props.leftIcon}</span>
     } else {
-      return null;
+      return <span className="floater"></span>;
     }
   }
 
   function renderAvatar() {
-
     if(props.avatar) {
       return <img className="avatar" src={props.avatar}></img>
     } else {
       return null;
     }
-
   }
 
   function renderRightIcon() {
@@ -85,11 +101,22 @@ export default function(props){
     }
   }
 
+
+
   return (
     <ListItemStyled>
       {renderLeftIcon()}
       {renderAvatar()}
-      <span className="label">{props.label}</span>
+
+      {props.subText ? (
+        <div className="listWrap">
+          <h6>{props.label}</h6>
+          <span className="subLabel">{props.subText}</span>
+        </div>
+      ) : (
+        <h6 className="label">{props.label}</h6>
+      )}
+
       {renderRightIcon()}
     </ListItemStyled>
   )
