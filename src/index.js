@@ -10,6 +10,7 @@ export { default as Padded } from './containers/Padded';
 export { default as MainPanel } from './containers/MainPanel';
 
 // Components
+export { default as Loader } from './components/Loader';
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';
 export { default as CoverImage } from './components/CoverImage';

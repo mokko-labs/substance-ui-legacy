@@ -1,22 +1,42 @@
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import _ from 'lodash';
+import Loader from './Loader';
 
-
-const ListWrap = styled.ul`
+const ListWrap = styled.div`
   list-style: none;
   padding: 0;
   margin: 0;
-  &>li {
+  min-height: 300px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom:  ${props => props.pagination ? '100px' : 0};
+
+  .list-item {
+    position: relative;
+    z-index: 1;
     border-bottom: 1px solid #DADADA;
     &:first-child {
       border-top: 1px solid #DADADA;
     }
   }
 
+  .loading-container {
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 3;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .pagination {
       list-style: none;
       float:right;
+      position: absolute;
+      bottom: 0;
+      right:0;
       display: inline-block;
       margin: 20px 20px 20px 0px;
       li {
@@ -29,6 +49,7 @@ const ListWrap = styled.ul`
 
         &.active a {
           background: ${props => props.theme.colors.primary};
+          border-color: ${props => props.theme.colors.primary};
           color:white;
         }
       }
@@ -46,15 +67,14 @@ const ListWrap = styled.ul`
 `;
 
 
-const propTypes = {
-
-};
+const propTypes = {};
 
 const defaultProps = {
   initialPage: 1
 };
 
 class Pagination extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { pager: {} };
@@ -82,13 +102,10 @@ class Pagination extends React.Component {
 
     // get new pager object for specified page
     pager = this.getPager(items.length, page, this.props.itemsPerPage || 10);
-
     // get new page of items from items array
     var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
-
     // update state
     this.setState({ pager: pager });
-
     // call change page function in parent component
     this.props.handleOnChangePage(pageOfItems);
   }
@@ -96,13 +113,10 @@ class Pagination extends React.Component {
   getPager(totalItems, currentPage, pageSize) {
     // default to first page
     currentPage = currentPage || 1;
-
     // default page size is 10
     pageSize = pageSize || 10;
-
     // calculate total pages
     var totalPages = Math.ceil(totalItems / pageSize);
-
     var startPage, endPage;
     if (totalPages <= 10) {
       // less than 10 total pages so show all
@@ -111,7 +125,7 @@ class Pagination extends React.Component {
     } else {
       if (currentPage <= 6) {
         startPage = 1;
-        endPage = 10;
+        endPage = 5;
       } else if (currentPage + 4 >= totalPages) {
         startPage = totalPages - 9;
         endPage = totalPages;
@@ -124,7 +138,6 @@ class Pagination extends React.Component {
     // calculate start and end item indexes
     var startIndex = (currentPage - 1) * pageSize;
     var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-
     // create an array of pages to ng-repeat in the pager control
     var pages = _.range(startPage, endPage + 1);
 
@@ -190,27 +203,63 @@ class List extends React.Component {
     super();
     this.state = {
       exampleItems: [],
-      pageOfItems: []
+      pageOfItems: [],
+      isLoading: true
     };
     this.onChangePage = this.onChangePage.bind(this);
   }
 
-  onChangePage(pageOfItems) {
-    this.setState({ pageOfItems: pageOfItems });
+  componentWillMount() {
+    console.log('Will mount Items' + this.state.pageOfItems.length);
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Did Update Items' + this.state.pageOfItems.length);
+  }
+
+  onChangePage(pageOfItems) {
+    this.setState({
+      isLoading: true
+    })
+    setTimeout(()=>{
+      this.setState({
+        pageOfItems: pageOfItems,
+        isLoading: false
+      });
+    }, 500)
+  }
+
 
   render() {
     return (
-      <ListWrap>
-        {this.ListRender}
-        {this.state.pageOfItems.map((item, index) =>
-          <li key={index}>{this.props.listComponent(item, index)}</li>
-        )}
-        <Pagination
-          handleOnChangePage={this.onChangePage}
-          itemsPerPage={this.props.itemsPerPage}
-          items={this.props.dataSource}
-        />
+      <ListWrap pagination={this.props.pagination === false ? false : true}>
+        { this.props.pagination === false ? (
+          // List without pagination
+
+
+          null
+        ) : (
+          // List without pagination
+
+          <div>
+            {this.state.isLoading ? (
+              <div className="loading-container">
+                {this.props.loadingComponent ? this.props.loadingComponent : (<Loader />)}
+              </div>
+            ) : null}
+            {this.state.pageOfItems.map((item, index) =>
+              <div className="list-item" key={index}>{this.props.listComponent(item, index)}</div>
+            )}
+            <div style={{ opacity:(this.state.isLoading && this.state.pageOfItems.length === 0 ) ? 0 : 1 }}>
+              <Pagination
+                handleOnChangePage={this.onChangePage}
+                items={this.props.dataSource}
+                itemsPerPage={this.props.itemsPerPage}
+              />
+            </div>
+          </div>
+
+        ) }
       </ListWrap>
     );
   }
@@ -219,7 +268,6 @@ class List extends React.Component {
 };
 
 List.propTypes = {
-
 };
 
 
