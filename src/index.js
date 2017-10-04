@@ -25,7 +25,7 @@ export { Form, Input, Label } from './components/FormElements';
 
 export { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table';
 
-export { Row, Column } from './components/Grid';
+export { Row, Column } from './components/Row';
 export { Split, SplitColumn } from './components/Split';
 
 export { default as Heading } from './components/Heading';
