@@ -17,6 +17,7 @@ export { default as CoverImage } from './components/CoverImage';
 
 export { default as NavLink } from './components/NavLink';
 
+export { default as Grid } from './components/Grid';
 export { default as List } from './components/List';
 export { default as ListItem } from './components/ListItem';
 

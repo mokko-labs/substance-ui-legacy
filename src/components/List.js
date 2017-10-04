@@ -19,6 +19,22 @@ const ListWrap = styled.div`
     &:first-child {
       border-top: 1px solid #DADADA;
     }
+
+    &:hover > div{
+      background:${props => props.enableHover ? props.theme.colors.secondary : ''};
+      cursor: ${props => props.enableHover ? 'pointer' : 'default'};
+    }
+  }
+
+  .emptyCont {
+    width:100%;
+    text-align: center;
+    margin: 100px 0px 0px 0px;
+    p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 14px;
+    }
   }
 
   .loading-container {
@@ -41,7 +57,7 @@ const ListWrap = styled.div`
       margin: 20px 20px 20px 0px;
       li {
         float:left;
-        margin: 2px;
+        margin: 4px;
 
         &.disabled {
           display: none;
@@ -60,7 +76,7 @@ const ListWrap = styled.div`
         border:1px solid #C2C2C2;
         font-size: 13px;
         border-radius: 3px;
-        padding:6px 8px;
+        padding:5px 10px;
       }
   }
 
@@ -202,19 +218,21 @@ class List extends React.Component {
   constructor() {
     super();
     this.state = {
-      exampleItems: [],
       pageOfItems: [],
+      showEmpty: false,
       isLoading: true
     };
     this.onChangePage = this.onChangePage.bind(this);
   }
 
-  componentWillMount() {
-    console.log('Will mount Items' + this.state.pageOfItems.length);
-  }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('Did Update Items' + this.state.pageOfItems.length);
+  componentWillReceiveProps(newProps) {
+    if (this.props.dataSource !== newProps.dataSource)  {
+      this.setState({
+        isLoading: false,
+        showEmpty: newProps.dataSource.length === 0 ? true : false
+      })
+    }
   }
 
   onChangePage(pageOfItems) {
@@ -232,17 +250,15 @@ class List extends React.Component {
 
   render() {
     return (
-      <ListWrap pagination={this.props.pagination === false ? false : true}>
+      <ListWrap enableHover={this.props.enableHover} pagination={this.props.pagination === false ? false : true}>
         { this.props.pagination === false ? (
           // List without pagination
-
-
           null
         ) : (
           // List without pagination
 
           <div>
-            {this.state.isLoading ? (
+            {(this.state.isLoading && !this.state.showEmpty) ? (
               <div className="loading-container">
                 {this.props.loadingComponent ? this.props.loadingComponent : (<Loader />)}
               </div>
@@ -260,6 +276,12 @@ class List extends React.Component {
           </div>
 
         ) }
+
+        {this.state.showEmpty ? (
+          <div className="emptyCont"><p>No data available.</p></div>
+        ) : (
+          null
+        )}
       </ListWrap>
     );
   }
