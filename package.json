@@ -22,6 +22,7 @@
   "homepage": "https://github.com/mokko-lab/substance-ui#readme",
   "dependencies": {
     "halogen": "^0.2.0",
+    "prop-types": "^15.6.0",
     "victory": "^0.22.2"
   },
   "devDependencies": {

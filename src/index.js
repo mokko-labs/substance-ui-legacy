@@ -1,15 +1,15 @@
-
-// Elements
-
-
-// Containers
-export { default as Card } from './containers/Card';
-export { default as SideBar } from './containers/SideBar';
-export { default as Panel } from './containers/Panel';
-export { default as Padded } from './containers/Padded';
-export { default as MainPanel } from './containers/MainPanel';
-
 // Components
+
+// Typography
+export { Heading, Paragraph } from './components/Typography';
+
+export { default as Card } from './components/Card';
+export { default as SideBar } from './components/SideBar';
+export { default as Panel } from './components/Panel';
+export { default as Padded } from './components/Padded';
+export { default as MainPanel } from './components/MainPanel';
+
+
 export { default as Loader } from './components/Loader';
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';
@@ -28,8 +28,7 @@ export { Table, TableHead, TableBody, TableRow, TableCell } from './components/T
 export { Row, Column } from './components/Row';
 export { Split, SplitColumn } from './components/Split';
 
-export { default as Heading } from './components/Heading';
-export { default as Paragraph } from './components/Paragraph';
+
 
 export { default as AreaChart } from './components/AreaChart';
 export { default as BarChart } from './components/BarChart';

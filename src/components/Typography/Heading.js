@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React from 'react';
+import styled, { withTheme } from 'styled-components';
 import theme from '../theme';
 
 const H1 = styled.h1`

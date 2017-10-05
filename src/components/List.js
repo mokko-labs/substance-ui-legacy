@@ -59,10 +59,6 @@ const ListWrap = styled.div`
         float:left;
         margin: 4px;
 
-        &.disabled {
-          display: none;
-        }
-
         &.active a {
           background: ${props => props.theme.colors.primary};
           border-color: ${props => props.theme.colors.primary};
