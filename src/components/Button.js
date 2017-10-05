@@ -97,7 +97,8 @@ const buttonSizing = function(props) {
 
 const Button = styled.button`
   border: none;
-
+  box-sizing: border-box;
+  outline:0;
   cursor: pointer;
   margin: 4px;
   ${props => buttonColoring(props)};

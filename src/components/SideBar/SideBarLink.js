@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
 import styled, { withTheme } from 'styled-components';
 
 
-const NavLink = styled.div`
+const SideBarLink = styled.div`
 
   a {
     text-decoration: none;
@@ -24,37 +23,17 @@ const NavLink = styled.div`
       font-weight: ${props => props.theme.sidebar.links.activeFontWeight || '800'};
       font-size:  ${props => props.theme.sidebar.links.activeFontSize+'px' || '24'};;
       svg {
-        font-size: 24px;  // Do not scale the SVG.
+        font-size: 24px;
       }
     }
   }
 
-    svg {
-      margin-right: 10px;
-      display: inline-block;
-      font-size: 24px;
-    }
-
-
-
+  svg {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 24px;
+  }
+  
 `;
 
-/* Responsive Bit: based on SideBar
-
-@media (max-width: 768px) {
-
-  a {
-    padding: 20px 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-
-  svg {
-    margin-right: 0;
-  }
-}
-
-*/
-export default withTheme(NavLink);
+export default withTheme(SideBarLink);

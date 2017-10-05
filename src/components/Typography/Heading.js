@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // ES6
 import styled, { withTheme } from 'styled-components';
-import theme from '../theme';
 
 const H1 = styled.h1`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -63,26 +63,6 @@ const H6 = styled.h6`
   line-height: 1.5;
 `;
 
-H1.defaultProps = {
-  theme: theme
-};
-H2.defaultProps = {
-  theme: theme
-};
-H3.defaultProps = {
-  theme: theme
-};
-H4.defaultProps = {
-  theme: theme
-};
-H5.defaultProps = {
-  theme: theme
-};
-H6.defaultProps = {
-  theme: theme
-};
-
-
 const Heading = (props) => {
 
   if (props.type === 'h1') {
@@ -126,5 +106,10 @@ const Heading = (props) => {
   );
 };
 
+Heading.propTypes = {
+  children: PropTypes.node.isRequired,
+  type: PropTypes.string
+};
 
-export default Heading;
+
+export default withTheme(Heading);

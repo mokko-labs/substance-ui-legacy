@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-import theme from '../theme';
-
+import styled, { withTheme } from 'styled-components';
 
 const Paragraph = styled.p`
   font-family: ${props => props.theme.fonts.paragraph || 'sans-serif'};
@@ -30,9 +28,5 @@ const Paragraph = styled.p`
   line-height:  1.5;
 `;
 
-Paragraph.defaultProps = {
-  theme: theme
-};
 
-
-export default Paragraph;
+export default withTheme(Paragraph);

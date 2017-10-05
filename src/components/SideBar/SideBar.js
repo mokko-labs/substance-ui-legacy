@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import theme from '../theme';
+import styled, { withTheme } from 'styled-components';
 
 const SideBar = styled.div`
   background: ${props => props.theme.sidebar.bg};
@@ -11,16 +10,5 @@ const SideBar = styled.div`
   box-shadow: ${props => props.shadow ? '0 2px 20px rgba(0,0,0,0.1)' : 'none'};
 `;
 
-/* Responsive Bit:
 
-@media (max-width: 768px) {
-  width: 64px;
-}
-
-*/
-
-SideBar.defaultProps = {
-  theme: theme
-};
-
-export default SideBar;
+export default withTheme(SideBar);

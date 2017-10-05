@@ -1,14 +1,15 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import { VictoryScatter, VictoryChart, VictoryArea, VictoryTooltip, VictoryLabel } from 'victory';
-import chartTheme from '../chartTheme';
-import {darken} from 'polished';
+import PropTypes from 'prop-types'; // ES6
+import { withTheme } from 'styled-components';
+import { VictoryScatter, VictoryChart, VictoryArea, VictoryTooltip } from 'victory';
+import chartTheme from './chartTheme';
+import { darken } from 'polished';
 
 const AreaChart = (props) => {
   return (
     <VictoryChart
-      padding={30}
       height={props.height}
+      padding={30}
       theme={chartTheme}
     >
       <VictoryArea
@@ -23,18 +24,25 @@ const AreaChart = (props) => {
       <VictoryScatter
         animate={props.animation}
         data={props.data}
-        style={{ data: { fill: "#fff", strokeWidth:2, stroke: darken(0.2, props.chartStyle.fill)} } }
         labelComponent={
           <VictoryTooltip
-            flyoutStyle={{ fill:props.chartStyle.fill, strokeWidth: 0}}
+            flyoutStyle={{ fill:props.chartStyle.fill, strokeWidth: 0 }}
             style={{ fontSize: 10, fill: 'white' }}
           />
         }
         labels={(d) => `Y: ${d.y}`}
         size={3}
+        style={{ data: { fill: "#fff", strokeWidth:2, stroke: darken(0.2, props.chartStyle.fill) } }}
       />
     </VictoryChart>
   );
+};
+
+AreaChart.propTypes = {
+  animation: PropTypes.object,
+  chartStyle: PropTypes.object,
+  data: PropTypes.array,
+  height: PropTypes.number,
 };
 
 export default withTheme(AreaChart);
