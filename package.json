@@ -1,11 +1,11 @@
 {
   "name": "substance-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A beautiful, reusable set of UI components for React projects.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d dist",
-    "build:watch": "babel src -w -d dist",
+    "build": "babel src -d lib",
+    "build:watch": "babel src -w -d lib",
     "lint": "eslint src/**; exit 0",
     "lint:watch": "esw -w src/**",
     "prepublish": "npm run build"
