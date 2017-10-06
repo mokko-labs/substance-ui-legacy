@@ -5,6 +5,9 @@ export { Heading, Paragraph } from './components/Typography';
 export { SideBar, MainPanel, SideBarLink } from './components/SideBar';
 export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
 
+export { TextInput } from './components/Forms';
+
+
 export { default as Card } from './components/Card';
 export { default as Panel } from './components/Panel';
 export { default as Padded } from './components/Padded';

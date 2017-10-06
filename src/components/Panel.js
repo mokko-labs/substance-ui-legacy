@@ -11,6 +11,15 @@ const Panel = styled.div`
   margin: ${props => props.margin+'px' || 0 };
   padding: ${props => props.padding+'px' || 0 };
   text-align:${props => props.alignment || 'left' };
+
+
+  &>* {
+    margin: 0 0 ${props => props.childSpacing+'px' || 0 } 0;
+  }
+  &>*:last-child {
+    margin-bottom: 0;
+  }
+  
 `;
 
 /* Responsive Bit (based on SideBar)
