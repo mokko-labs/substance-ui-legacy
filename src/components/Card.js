@@ -1,4 +1,5 @@
 import styled, { withTheme } from 'styled-components';
+import theme from '../theme';
 
 const defaultShadow = '0 12px 26px 5px rgba(202, 202, 202, 0.32)';
 
@@ -16,5 +17,9 @@ const Card = styled.div`
     box-shadow: ${defaultShadow};
   }
 `;
+
+Card.defaultProps = {
+  theme: theme
+}
 
 export default withTheme(Card);

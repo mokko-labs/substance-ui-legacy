@@ -21,8 +21,6 @@ export { default as Grid } from './components/Grid';
 export { default as List } from './components/List';
 export { default as ListItem } from './components/ListItem';
 
-export { Form, Input, Label } from './components/FormElements';
-
 export { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table';
 
 export { Row, Column } from './components/Row';

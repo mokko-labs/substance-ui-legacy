@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import theme from '../../theme';
 
 const H1 = styled.h1`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -111,5 +112,8 @@ Heading.propTypes = {
   type: PropTypes.string
 };
 
+Heading.defaultProps = {
+  theme: theme
+}
 
-export default withTheme(Heading);
+export default Heading;
