@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import { withTheme } from 'styled-components';
 import { VictoryStack } from 'victory';
 
 const ChartStack = (props) => {
@@ -16,4 +15,4 @@ ChartStack.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default withTheme(ChartStack);
+export default ChartStack;

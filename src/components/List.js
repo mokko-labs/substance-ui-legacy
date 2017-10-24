@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import _ from 'lodash';
 import Loader from './Loader';
+import theme from '../theme';
 
 const ListWrap = styled.div`
   list-style: none;
@@ -78,6 +79,9 @@ const ListWrap = styled.div`
 
 `;
 
+ListWrap.defaultProps = {
+  theme: theme
+};
 
 const propTypes = {};
 
@@ -282,11 +286,7 @@ class List extends React.Component {
     );
   }
 
-
-};
-
-List.propTypes = {
 };
 
 
-export default withTheme(List);
+export default List;

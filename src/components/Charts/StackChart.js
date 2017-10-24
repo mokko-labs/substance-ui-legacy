@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import { withTheme } from 'styled-components';
 import { VictoryChart, VictoryArea, VictoryStack, VictoryScatter, VictoryTooltip } from 'victory';
 import chartTheme from './chartTheme';
 import { darken } from 'polished';
+import theme from '../../theme';
 
 const StackChart = (props) => {
 
@@ -75,5 +75,8 @@ StackChart.propTypes = {
   height: PropTypes.string
 };
 
+StackChart.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(StackChart);
+export default StackChart;

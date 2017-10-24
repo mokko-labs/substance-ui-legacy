@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import { withTheme } from 'styled-components';
 import { VictoryScatter, VictoryChart, VictoryArea, VictoryTooltip } from 'victory';
 import chartTheme from './chartTheme';
 import { darken } from 'polished';
+import theme from '../../theme';
 
 const AreaChart = (props) => {
   return (
@@ -38,6 +38,10 @@ const AreaChart = (props) => {
   );
 };
 
+AreaChart.defaultProps = {
+  theme: theme
+};
+
 AreaChart.propTypes = {
   animation: PropTypes.object,
   chartStyle: PropTypes.object,
@@ -45,4 +49,4 @@ AreaChart.propTypes = {
   height: PropTypes.number,
 };
 
-export default withTheme(AreaChart);
+export default AreaChart;

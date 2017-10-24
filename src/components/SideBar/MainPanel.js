@@ -1,10 +1,13 @@
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import theme from '../../theme';
 
 const MainPanel = styled.div`
-  margin-left: ${props => props.theme.sidebar.width +'px' || '200px'};
   background-color: ${props => props.backgroundColor || '#fff' };
   min-height: 100vh;
 `;
 
+MainPanel.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(MainPanel);
+export default MainPanel;

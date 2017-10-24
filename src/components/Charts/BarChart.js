@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import { withTheme } from 'styled-components';
 import { VictoryChart, VictoryBar, VictoryTooltip } from 'victory';
 import chartTheme from './chartTheme';
+import theme from '../../theme';
 
 const BarChart = (props) => {
   return (
@@ -38,5 +38,9 @@ BarChart.propTypes = {
   height: PropTypes.string
 };
 
+BarChart.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(BarChart);
+
+export default BarChart;

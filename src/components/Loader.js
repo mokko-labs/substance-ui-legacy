@@ -1,6 +1,7 @@
 import styled, { withTheme } from 'styled-components';
 import React from 'react';
 import Halogen from 'halogen';
+import theme from '../theme';
 
 const Loader = (props) => {
 
@@ -15,5 +16,9 @@ const Loader = (props) => {
   );
 };
 
+Loader.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(Loader);
+
+export default Loader;

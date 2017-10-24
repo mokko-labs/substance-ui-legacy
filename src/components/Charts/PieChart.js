@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import { withTheme } from 'styled-components';
 import { VictoryPie, VictoryLabel } from 'victory';
 import chartTheme from './chartTheme';
+import theme from '../../theme';
 
 const PieChart = (props) => {
   return (
@@ -34,5 +34,9 @@ PieChart.propTypes = {
   width: PropTypes.string,
 };
 
+PieChart.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(PieChart);
+
+export default PieChart;

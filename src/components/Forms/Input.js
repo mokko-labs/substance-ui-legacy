@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
-import styled, {withTheme} from 'styled-components';
+import styled from 'styled-components';
+import theme from '../../theme';
 
 const Input = styled.input `
 	padding: 1em;
@@ -148,6 +149,16 @@ class TextInput extends React.Component {
 
 };
 
+Input.defaultProps = {
+  theme: theme
+};
+IconWrap.defaultProps = {
+  theme: theme
+};
+InputWrap.defaultProps = {
+  theme: theme
+};
+
 TextInput.propTypes = {
   floating: PropTypes.bool,
   icon: PropTypes.node,
@@ -156,4 +167,4 @@ TextInput.propTypes = {
   type: PropTypes.string
 };
 
-export default withTheme(TextInput);
+export default TextInput;

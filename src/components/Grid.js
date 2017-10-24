@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import _ from 'lodash';
 import Loader from './Loader';
+import theme from '../theme';
 
 const GridWrap = styled.div`
   display: flex;
@@ -291,5 +292,8 @@ class Grid extends React.Component {
 Grid.propTypes = {
 };
 
+GridWrap.defaultProps = {
+  theme: theme
+};
 
-export default withTheme(Grid);
+export default Grid;

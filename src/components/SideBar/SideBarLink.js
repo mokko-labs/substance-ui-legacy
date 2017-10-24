@@ -1,4 +1,5 @@
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import theme from '../../theme';
 
 
 const SideBarLink = styled.div`
@@ -33,7 +34,12 @@ const SideBarLink = styled.div`
     display: inline-block;
     font-size: 24px;
   }
-  
 `;
 
-export default withTheme(SideBarLink);
+
+SideBarLink.defaultProps = {
+  theme: theme
+};
+
+
+export default SideBarLink;
