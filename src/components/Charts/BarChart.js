@@ -35,7 +35,7 @@ BarChart.propTypes = {
   animation: PropTypes.object,
   chartStyle: PropTypes.object,
   data: PropTypes.array,
-  height: PropTypes.string
+  height: PropTypes.number
 };
 
 BarChart.defaultProps = {

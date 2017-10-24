@@ -29,7 +29,7 @@ PieChart.propTypes = {
   animation: PropTypes.object,
   data: PropTypes.array,
   dataColors: PropTypes.array,
-  height: PropTypes.string,
+  height: PropTypes.number,
   innerRadius: PropTypes.number,
   width: PropTypes.string,
 };

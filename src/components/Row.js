@@ -12,6 +12,10 @@ const Row = styled.div`
     position: relative;
     flex: ${(props)=>props.columnsCount ? '0 0 '+(100/props.columnsCount)+'%'  : 1};
     padding: ${(props)=>props.gutter ? (props.gutter+'px 0 0 ' + props.gutter+'px') : 0};
+
+    @media (max-width: 1200px) {
+      flex: ${(props)=>props.columnsCount ? '0 0 100%'  : 1};
+    }
   }
 `;
 
