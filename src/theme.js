@@ -27,7 +27,7 @@ const theme = {
 
   sidebar: {
     bg: '#FFFFFF',
-    width: 200,
+    width: 210,
 
     links: {
       padding: '0px 40px',

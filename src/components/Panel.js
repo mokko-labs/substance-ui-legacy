@@ -16,10 +16,15 @@ const Panel = styled.div`
   &>* {
     margin: 0 0 ${props => props.childSpacing+'px' || 0 } 0;
   }
-  &>*:last-child {
-    margin-bottom: 0;
-  }
-  
+
+  ${props => props.disabled ? `
+      &>*:last-child {
+        margin-bottom: 0;
+      }
+    ` : ''
+  };
+
+
 `;
 
 /* Responsive Bit (based on SideBar)
