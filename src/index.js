@@ -2,8 +2,9 @@
 
 
 export { Heading, Paragraph } from './components/Typography';
-export { SideBar, MainPanel, SideBarLink } from './components/SideBar';
+export { SideBar, MainPanel, SideBarLink } from './components/Layouts';
 export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
+
 
 export { TextInput } from './components/Forms';
 

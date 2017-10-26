@@ -1,9 +1,9 @@
 import SideBar from './SideBar';
-import MainPanel from './MainPanel';
+import LayoutWrapper from './LayoutWrapper';
 import SideBarLink from './SideBarLink';
 
 export {
   SideBar,
-  MainPanel,
+  LayoutWrapper,
   SideBarLink
 };
