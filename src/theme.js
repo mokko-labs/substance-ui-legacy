@@ -1,24 +1,22 @@
 const theme = {
 
   colors: {
-    primary: '#6ABDF8',
-    secondary: '#EA4466',
+    primary: '#1EB0E9',
+    secondary: '#FFBF00',
 
-    heading: '#313131',
-    paragraph: '#888888',
+    heading: '#313131', // Heading Text Color
+    paragraph: '#888888', // Paragraph Text Color
 
-    monochrome: '#000',
-    success: '#93E522',
-    warning: '#FADB4A',
-    error: '#FF3E00',
-
-    default: '#C1C1C1'
+    monochrome: '#545454',
+    success: '#93E522', // Success State
+    warning: '#FADB4A', // Warning State
+    error: '#FF3E00', // Error State
   },
 
   fonts: {
-    baseSize: '16px',
-    heading: ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    paragraph: ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+    baseSize: '16px', // Base Font Size
+    heading: ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',  // Heading Fonts
+    paragraph: ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' // Paragraph Fonts
   },
 
   card: {

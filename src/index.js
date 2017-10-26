@@ -27,8 +27,7 @@ export { Row, Column } from './components/Row';
 export { Split, SplitColumn } from './components/Split';
 
 
-
 // Theme
 export { makeTheme } from './utils';
 export { ThemeProvider, withTheme } from 'styled-components';
-export { theme } from './theme';
+export { default as theme } from './theme';
