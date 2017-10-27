@@ -1,6 +1,6 @@
 import List from './List';
 import ListItem from './ListItem';
-import { Grid } from './Grid';
+import Grid from './Grid';
 
 
 export {

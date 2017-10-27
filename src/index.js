@@ -9,13 +9,13 @@ export { TextInput } from './components/Forms';
 
 export { Table, TableHead, TableBody, TableCell, TableRow } from './components/Tables';
 
-export { Card, CoverImage } from './components/Card';
+export { Card, CoverImage } from './components/Cards';
 
 export { Loader } from './components/Misc';
 
 export { Button } from './components/Buttons';
 
-export { Grid, List, ListItem } from './components/List';
+export { Grid, List, ListItem } from './components/Lists';
 
 
 
