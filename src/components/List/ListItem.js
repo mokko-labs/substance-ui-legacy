@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import theme from '../theme';
+import theme from '../../theme';
 
 const ListItemStyled = styled.div`
   padding-left: 30px; padding-right: 30px;

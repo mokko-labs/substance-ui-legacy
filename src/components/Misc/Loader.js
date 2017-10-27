@@ -1,7 +1,7 @@
 import styled, { withTheme } from 'styled-components';
 import React from 'react';
 import Halogen from 'halogen';
-import theme from '../theme';
+import theme from '../../theme';
 
 const Loader = (props) => {
 

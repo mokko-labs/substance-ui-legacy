@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {darken, lighten, transparentize} from 'polished';
-import theme from '../theme';
+import theme from '../../theme';
 import {adjustHue} from 'polished';
 import Halogen from 'halogen';
 

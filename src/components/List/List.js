@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
-import Loader from './Loader';
-import theme from '../theme';
+import Loader from '../Misc/Loader';
+import theme from '../../theme';
 
 const ListWrap = styled.div`
   list-style: none;

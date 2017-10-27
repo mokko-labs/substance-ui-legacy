@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Row = styled.div`
@@ -19,7 +20,7 @@ const Row = styled.div`
   }
 `;
 
-const Column = styled.div`
+const ColumnBase = styled.div`
   display: ${(props)=>props.matchHeight ? 'flex' : 'block'};
 `;
 
@@ -30,6 +31,27 @@ const Column = styled.div`
   margin-left: 64px;
 }
 */
+
+class Column extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      loading: false
+    };
+  }
+
+  render() {
+    return (
+      <ColumnBase matchHeight={this.props.matchHeight}>
+          {this.props.children}
+      </ColumnBase>
+    )
+  }
+}
+
+
+
 export {
   Row,
   Column

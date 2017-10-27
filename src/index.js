@@ -1,34 +1,25 @@
 
-
-
 export { Heading, Paragraph } from './components/Typography';
-export { SideBar, MainPanel, SideBarLink } from './components/Layouts';
-export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
 
+export { LayoutWrapper, SideBarLink, Row, Column, Split, SplitColumn, Padded, Panel } from './components/Layouts';
+
+export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
 
 export { TextInput } from './components/Forms';
 
+export { Table, TableHead, TableBody, TableCell, TableRow } from './components/Tables';
 
-export { default as Card } from './components/Card';
-export { default as Panel } from './components/Panel';
-export { default as Padded } from './components/Padded';
-export { default as Loader } from './components/Loader';
-export { default as Button } from './components/Button';
-export { default as IconButton } from './components/IconButton';
-export { default as CoverImage } from './components/CoverImage';
+export { Card, CoverImage } from './components/Card';
 
+export { Loader } from './components/Misc';
 
-export { default as Grid } from './components/Grid';
-export { default as List } from './components/List';
-export { default as ListItem } from './components/ListItem';
+export { Button } from './components/Buttons';
 
-export { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table';
+export { Grid, List, ListItem } from './components/List';
 
-export { Row, Column } from './components/Row';
-export { Split, SplitColumn } from './components/Split';
 
 
 // Theme
-export { makeTheme } from './utils';
+export { makeTheme } from './components/Theme/utils';
 export { ThemeProvider, withTheme } from 'styled-components';
-export { default as theme } from './theme';
+export { default as theme } from './components/Theme/theme';
