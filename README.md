@@ -40,3 +40,5 @@ Check out the demo [here](http://substance.mokko.surge.sh/)
 
 This project is licensed under the terms of the
 [MIT license](https://github.com/mokko-lab/substance-ui/blob/master/LICENSE).
+
+#### Made with ♥ @[Mokko](http://mokko.io/)
