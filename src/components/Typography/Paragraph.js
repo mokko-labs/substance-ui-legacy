@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const Paragraph = styled.p`
   font-family: ${props => props.theme.fonts.paragraph || 'sans-serif'};

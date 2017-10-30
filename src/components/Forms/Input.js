@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
 import styled from 'styled-components';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const Input = styled.input `
 	padding: 1em;

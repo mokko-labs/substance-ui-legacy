@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import Loader from '../Misc/Loader';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const GridWrap = styled.div`
   display: flex;

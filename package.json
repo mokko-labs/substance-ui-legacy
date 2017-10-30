@@ -21,13 +21,11 @@
   },
   "homepage": "https://github.com/mokko-lab/substance-ui#readme",
   "dependencies": {
-    "halogen": "^0.2.0",
     "lodash": "^4.17.4",
-    "prop-types": "^15.6.0",
-    "victory": "^0.22.2",
     "polished": "^1.4.0",
     "prop-types": "^15.5.10",
-    "styled-components": "^2.1.2"
+    "styled-components": "^2.1.2",
+    "victory": "^0.22.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -40,7 +38,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }

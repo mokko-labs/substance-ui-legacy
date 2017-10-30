@@ -9,7 +9,7 @@ export { TextInput } from './components/Forms';
 
 export { Table, TableHead, TableBody, TableCell, TableRow } from './components/Tables';
 
-export { Card, CoverImage } from './components/Cards';
+export { Card, CoverImage } from './components/Card';
 
 export { Loader } from './components/Misc';
 

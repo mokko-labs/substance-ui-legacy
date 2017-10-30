@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {darken, lighten, transparentize} from 'polished';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 import {adjustHue} from 'polished';
-import Halogen from 'halogen';
+
 
 function makeGradient(color) {
   return `linear-gradient(322.34deg, ${color} 0%, ${adjustHue(-10, color)} 100%)`;
@@ -157,7 +157,7 @@ class Button extends React.Component {
           this.state.loading ? (
             <ButtonBase disabled size={this.props.size} alt={this.props.alt} outline={this.props.outline} color={this.props.color} theme={this.props.theme}>
               <div style={{'position':'absolute', 'top':'50%', 'left' : '50%', marginLeft:'-10px', marginTop: '-10px'}}>
-                <Halogen.ClipLoader size={20} color={this.props.color}  />
+                Loading
               </div>
               <div style={{'opacity' : 0}}>
                 {this.props.children}

@@ -1,18 +1,10 @@
 import styled, { withTheme } from 'styled-components';
 import React from 'react';
-import Halogen from 'halogen';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const Loader = (props) => {
-
-  if (props.type === 'Pulse') {
-    return (
-      <Halogen.PulseLoader color={props.color ? props.color : props.theme.colors.primary} {...props} />
-    );
-  }
-
   return (
-    <Halogen.ClipLoader color={props.color ? props.color : props.theme.colors.primary} {...props} />
+    <span>Loading...</span>
   );
 };
 

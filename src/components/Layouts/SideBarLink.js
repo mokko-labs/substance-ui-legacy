@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 
 const SideBarLink = styled.div`
@@ -7,7 +7,7 @@ const SideBarLink = styled.div`
   a {
     text-decoration: none;
     display: block;
-    font-family: ${props => props.theme.fonts.heading};
+    font-family: ${props => props.theme.fonts.heading ? props.theme.fonts.heading : 'sans-serif'};
     padding:${props => props.theme.sidebar.links.padding || '0 30px'};
     letter-spacing: 0.8px;
     line-height:${props => props.theme.sidebar.links.lineHeight || '64px'};
