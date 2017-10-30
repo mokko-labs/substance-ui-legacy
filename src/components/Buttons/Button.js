@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {darken, lighten, transparentize} from 'polished';
 import theme from '../Theme/theme';
 import {adjustHue} from 'polished';
+import { ClipLoader } from 'react-spinners';
+
 
 
 function makeGradient(color) {
@@ -157,7 +159,11 @@ class Button extends React.Component {
           this.state.loading ? (
             <ButtonBase disabled size={this.props.size} alt={this.props.alt} outline={this.props.outline} color={this.props.color} theme={this.props.theme}>
               <div style={{'position':'absolute', 'top':'50%', 'left' : '50%', marginLeft:'-10px', marginTop: '-10px'}}>
-                Loading
+                <ClipLoader
+                      color={this.props.color}
+                      size={22}
+                      loading={this.state.loading}
+                    />
               </div>
               <div style={{'opacity' : 0}}>
                 {this.props.children}

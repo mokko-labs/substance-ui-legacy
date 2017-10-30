@@ -1,11 +1,15 @@
 import styled, { withTheme } from 'styled-components';
 import React from 'react';
 import theme from '../Theme/theme';
+import { ClipLoader } from 'react-spinners';
 
 const Loader = (props) => {
   return (
-    <span>Loading...</span>
-  );
+    <ClipLoader
+          color={props.theme.colors.primary}
+          loading={true}
+        />
+  )
 };
 
 Loader.defaultProps = {

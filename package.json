@@ -24,6 +24,7 @@
     "lodash": "^4.17.4",
     "polished": "^1.4.0",
     "prop-types": "^15.5.10",
+    "react-spinners": "^0.1.9",
     "styled-components": "^2.1.2",
     "victory": "^0.22.2"
   },
