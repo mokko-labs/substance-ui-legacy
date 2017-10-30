@@ -21,5 +21,5 @@ export { Grid, List, ListItem } from './components/Lists';
 
 // Theme
 export { makeTheme } from './components/Theme/utils';
-export { ThemeProvider, withTheme } from 'styled-components';
 export { default as theme } from './components/Theme/theme';
+export { ThemeProvider, withTheme } from 'styled-components';

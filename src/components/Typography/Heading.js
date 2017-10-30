@@ -60,8 +60,8 @@ const H6 = styled.h6`
   margin:0;
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
-  font-size: 1.250em;
-  line-height: 1.5;
+  font-size: 1.150em;
+  line-height: 1.4;
 `;
 
 const Heading = (props) => {
