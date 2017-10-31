@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
-import Padded from '../../components/Layouts/Padded'
+import {Padded} from '../../components/Layouts/index'
 
 test('Padded Styled Component', () => {
   const tree = renderer.create(<Padded />).toJSON()
