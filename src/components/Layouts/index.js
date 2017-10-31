@@ -1,17 +1,15 @@
 import LayoutWrapper from './LayoutWrapper';
-import SideBarLink from './SideBarLink';
+import Container from './Container';
 import { Row, Column } from './Row';
 import { Split, SplitColumn } from './Split';
-import Padded from './Padded';
 import Panel from './Panel';
 
 export {
   LayoutWrapper,
-  SideBarLink,
+  Container,
   Row,
   Column,
   Split,
   SplitColumn,
-  Padded,
   Panel
 };
