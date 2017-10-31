@@ -11,37 +11,21 @@ const Panel = styled.div`
   margin: ${props => props.margin+'px' || 0 };
   text-align:${props => props.alignment || 'left' };
 
-  padding-top:${props => props.top * 10 || 0 }px;
-  padding-right:${props => props.right * 10 || 0 }px;
-  padding-bottom:${props => props.bottom * 10 || 0 }px;
-  padding-left:${props => props.left * 10 || 0 }px;
-  ${props => props.all ? `
-        padding:`+ props.all * 10 +`px;
+  padding-top:${props => props.paddingTop|| 0 }px;
+  padding-right:${props => props.paddingRight || 0 }px;
+  padding-bottom:${props => props.paddingBottom || 0 }px;
+  padding-left:${props => props.paddingLeft || 0 }px;
+  ${props => props.padding ? `
+        padding:`+ props.padding +`px;
     ` : ''
   };
   box-sizing: border-box;
 
-  @media (max-width: 1400px) {
-    padding:${props => props.all * 10 || 0 }px;
-    padding-top:${props => props.top * 7 || 0 }px;
-    padding-right:${props => props.right * 7 || 0 }px;
-    padding-bottom:${props => props.bottom * 7 || 0 }px;
-    padding-left:${props => props.left * 7 || 0 }px;
-  }
 
-  @media (max-width: 1100px) {
-    padding:${props => props.all * 10 || 0 }px;
-    padding-top:${props => props.top * 5 || 0 }px;
-    padding-right:${props => props.right * 5 || 0 }px;
-    padding-bottom:${props => props.bottom * 5 || 0 }px;
-    padding-left:${props => props.left * 5 || 0 }px;
-  }
-
-  &>* {
-    margin: 0 0 ${props => props.childSpacing+'px' || 0 } 0;
-  }
-
-  ${props => props.disabled ? `
+  ${props => props.childSpacing ? `
+      &>* {
+        margin: 0 0 ` + props.childSpacing + `px 0 !important;
+      }
       &>*:last-child {
         margin-bottom: 0;
       }

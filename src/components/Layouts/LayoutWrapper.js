@@ -22,14 +22,6 @@ const Content = styled.div`
   margin-left: ${props => props.sidebarWidth+'px' || '0px' };
 `;
 
-const ContentWrap = styled.div`
-  max-width: ${props => props.fluid ? '100%' : '1700px' || '100%' };
-  padding-left: 70px;
-  padding-right: 70px;
-  padding-bottom: 100px;
-  margin: 0 auto;
-`;
-
 
 class LayoutWrapper extends React.Component {
 
@@ -47,7 +39,7 @@ class LayoutWrapper extends React.Component {
           <Sidebar
             background={this.props.sidebarBg ? this.props.sidebarBg : this.props.theme.sidebar.bg}
             width={this.props.sidebarWidth ? this.props.sidebarWidth : this.props.theme.sidebar.width}
-            shadow={this.props.sidebarShadow ? this.props.sidebarShadow : this.props.theme.sidebar.shadow}
+            shadow={this.props.sidebarShadow || false}
           >
             {this.props.sidebarComponent}
           </Sidebar>
@@ -58,9 +50,7 @@ class LayoutWrapper extends React.Component {
             sidebar={this.props.sidebarComponent ? true : false}
             bg={this.props.contentBg}
           >
-            <ContentWrap fluid={this.props.fluid ? this.props.fluid : false }>
               {this.props.children}
-            </ContentWrap>
           </Content>
         ) : null }
       </Wrapper>
