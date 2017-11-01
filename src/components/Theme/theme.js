@@ -8,9 +8,9 @@ const theme = {
     paragraph: '#888888', // Paragraph Text Color
 
     monochrome: '#545454',
-    success: '#93E522', // Success State
-    warning: '#FADB4A', // Warning State
-    error: '#FF3E00', // Error State
+    success: '#50de5b', // Success State
+    warning: '#efd41a', // Warning State
+    error: '#ef5a2a', // Error State
   },
 
   fonts: {

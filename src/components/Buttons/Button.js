@@ -50,7 +50,7 @@ function buttonColoring(props) {
   var selection = props.theme.colors[props.color || 'default'];
 
   return `
-    background: ${makeGradient(selection)};
+    background: ${ (props.color === 'success' || props.color === 'warning' || props.color === 'error') ? selection : makeGradient(selection)};
     color: ${selection === 'default' ? '#333' : 'white'};
 
     &:hover {

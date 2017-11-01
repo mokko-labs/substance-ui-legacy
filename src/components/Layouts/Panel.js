@@ -3,10 +3,12 @@ import styled from 'styled-components';
 const Panel = styled.div`
   max-width:${props => props.maxWidth ? props.maxWidth : '100%'};
   display: ${props => props.flex ? 'flex' : 'block'};
+  height: ${props => props.flex ? '100%' : 'auto'};
   width:100%;
   margin: 0 auto;
   box-sizing: border-box;
   justify-content: ${props => props.justifyContent ? props.justifyContent : 'flex-start'};
+  align-items: ${props => props.alignItems ? props.alignItems : 'flex-start'};
   flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};
   margin: ${props => props.margin+'px' || 0 };
   text-align:${props => props.alignment || 'left' };
