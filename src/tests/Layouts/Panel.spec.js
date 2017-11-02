@@ -9,6 +9,7 @@ test('Panel Styled Component', () => {
   expect(tree).toHaveStyleRule('max-width', '100%')
   expect(tree).toHaveStyleRule('display', 'block')
   expect(tree).toHaveStyleRule('width', '100%')
+  expect(tree).toHaveStyleRule('height', 'auto')
   expect(tree).toHaveStyleRule('margin', 'undefinedpx')
   expect(tree).toHaveStyleRule('box-sizing', 'border-box')
   expect(tree).toHaveStyleRule('justify-content', 'flex-start')

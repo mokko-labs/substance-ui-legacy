@@ -9,7 +9,6 @@ test('Padded Styled Component', () => {
   expect(tree).toHaveStyleRule('max-width', '1700px')
   expect(tree).toHaveStyleRule('padding-right', '70px')
   expect(tree).toHaveStyleRule('padding-left', '70px')
-  expect(tree).toHaveStyleRule('padding-bottom', '100px')
   expect(tree).toHaveStyleRule('margin', '0 auto')
 
 })
