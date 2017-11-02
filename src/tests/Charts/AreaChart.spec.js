@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 import {AreaChart} from '../../components/Charts/index'
 
+import toJson from 'enzyme-to-json'
+
 import { mount, configure } from 'enzyme';
 
 import Adapter from 'enzyme-adapter-react-16';
@@ -29,6 +31,7 @@ test('Area Chart Styled Components', () => {
                ]}
     />
   );
+  expect(toJson(wrapper)).toMatchSnapshot();
     // Match the props
   expect(wrapper.props().chartStyle).toEqual({fill:'white'})
   expect(wrapper.props().height).toEqual(250)

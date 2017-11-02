@@ -7,6 +7,8 @@ import { mount, configure } from 'enzyme';
 
 import Adapter from 'enzyme-adapter-react-16';
 
+import toJson from 'enzyme-to-json'
+
 configure({ adapter: new Adapter() });
 
 test('Area Chart Styled Components', () => {
@@ -28,6 +30,8 @@ test('Area Chart Styled Components', () => {
               data={PieData}
     />
   );
+  expect(toJson(wrapper)).toMatchSnapshot();
+
   // Match the props
   expect(wrapper.props().innerRadius).toEqual(60)
   expect(wrapper.props().height).toEqual(250)
