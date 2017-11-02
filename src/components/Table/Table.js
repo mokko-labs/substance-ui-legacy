@@ -4,28 +4,45 @@ import _ from 'lodash';
 import Loader from '../Misc/Loader';
 import theme from '../Theme/theme';
 
-const ListWrap = styled.div`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  min-height: 300px;
-  box-sizing: border-box;
-  position: relative;
-  padding-bottom:  ${props => props.pagination ? '100px' : 0};
+const TableWrap = styled.table`
+  width: 100%;
+  border-collapse: collapse;
 
-  .list-item {
-    position: relative;
-    z-index: 1;
-    border-bottom: 1px solid #DADADA;
-    &:first-child {
-      border-top: 1px solid #DADADA;
+  thead {
+    tr {
+      border-bottom: 1px solid #DADADA !important;
+      background: #f7f7f7;
     }
-
-    &:hover > div{
-      background:${props => props.enableHover ? props.theme.colors.secondary : ''};
-      cursor: ${props => props.enableHover ? 'pointer' : 'default'};
+    td {
+      font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
+      font-weight: bold;
+      color:${props => props.color ? props.color : props.theme.colors.heading || '#000'};
+      padding: 20px 10px;
     }
   }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #DADADA;
+
+      &:last-child {
+        border: none !important;
+      }
+    }
+    td {
+      padding: 20px 10px;
+      font-family: ${props => props.theme.fonts.paragraph || 'sans-serif'};
+      color:${props => props.color ? props.color : props.theme.colors.paragraph || '#000'};
+    }
+  }
+
+  tfoot {
+    tr {
+      position: relative;
+      height: 70px;
+    }
+  }
+
 
   .emptyCont {
     width:100%;
@@ -37,23 +54,30 @@ const ListWrap = styled.div`
       font-size: 14px;
     }
   }
+`;
 
+const TableContainer = styled.div`
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  padding-bottom: 80px;
   .loading-container {
     position: absolute;
     width:100%;
-    height:100%;
+    height:90%;
     z-index: 3;
     background: rgba(255,255,255,0.7);
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .pagination {
       list-style: none;
       float:right;
-      position: absolute;
       bottom: 0;
       right:0;
+      position: absolute;
       display: inline-block;
       margin: 20px 20px 20px 0px;
       li {
@@ -79,10 +103,13 @@ const ListWrap = styled.div`
         padding:5px 10px;
       }
   }
-
 `;
 
-ListWrap.defaultProps = {
+
+TableWrap.defaultProps = {
+  theme: theme
+};
+TableContainer.defaultProps = {
   theme: theme
 };
 
@@ -216,7 +243,7 @@ Pagination.defaultProps = defaultProps;
 
 
 
-class List extends React.Component {
+class Table extends React.Component {
 
   constructor() {
     super();
@@ -253,43 +280,40 @@ class List extends React.Component {
 
   render() {
     return (
-      <ListWrap enableHover={this.props.enableHover} pagination={this.props.pagination === false ? false : true}>
-        { this.props.pagination === false ? (
-          // List without pagination
-          null
-        ) : (
-          // List without pagination
-
-          <div>
-            {(this.state.isLoading && !this.state.showEmpty) ? (
-              <div className="loading-container">
-                {this.props.loadingComponent ? this.props.loadingComponent : (<Loader />)}
-              </div>
-            ) : null}
-            {this.state.pageOfItems.map((item, index) =>
-              <div className="list-item" key={index}>{this.props.listComponent(item, index)}</div>
-            )}
-            <div style={{ opacity:(this.state.isLoading && this.state.pageOfItems.length === 0 ) ? 0 : 1 }}>
-              <Pagination
-                handleOnChangePage={this.onChangePage}
-                items={this.props.dataSource}
-                itemsPerPage={this.props.itemsPerPage}
-              />
-            </div>
+      <TableContainer>
+        {(this.state.isLoading && !this.state.showEmpty) ? (
+          <div className="loading-container">
+            {this.props.loadingComponent ? this.props.loadingComponent : (<Loader />)}
           </div>
-
-        ) }
-
-        {this.state.showEmpty ? (
-          <div className="emptyCont"><p>No data available.</p></div>
-        ) : (
-          null
-        )}
-      </ListWrap>
+        ) : null}
+        <TableWrap enableHover={this.props.enableHover} pagination={this.props.pagination === false ? false : true}>
+          {this.props.headerComponent ? (
+            <thead>
+              {this.props.headerComponent()}
+            </thead>
+          ) : null }
+          <tbody>
+            { this.props.pagination === false ? (
+              // List without pagination
+              null
+            ) :
+              // List without pagination
+              this.state.pageOfItems.map((item, index) => this.props.rowComponent(item, index)
+              )
+            }
+          </tbody>
+        </TableWrap>
+          <Pagination
+            handleOnChangePage={this.onChangePage}
+            items={this.props.dataSource}
+            itemsPerPage={this.props.itemsPerPage}
+          />
+          <div style={{ 'clear': 'both' }} />
+      </TableContainer>
     );
   }
 
 };
 
 
-export default List;
+export default Table;

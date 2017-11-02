@@ -7,7 +7,7 @@ export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
 
 export { TextInput } from './components/Forms';
 
-export { Table, TableHead, TableBody, TableCell, TableRow } from './components/Tables';
+export { Table } from './components/Table';
 
 export { Card, CoverImage } from './components/Card';
 
