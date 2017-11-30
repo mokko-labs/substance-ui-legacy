@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; // ES6
 import { VictoryPie, VictoryLabel } from 'victory';
 import chartTheme from './chartTheme';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const PieChart = (props) => {
   return (

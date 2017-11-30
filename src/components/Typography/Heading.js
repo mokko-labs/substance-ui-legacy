@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
 import styled from 'styled-components';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const H1 = styled.h1`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
@@ -60,8 +60,8 @@ const H6 = styled.h6`
   margin:0;
   font-weight:${props => props.weight || 'bold'};
   letter-spacing: 0.7px;
-  font-size: 1.250em;
-  line-height: 1.5;
+  font-size: 1.150em;
+  line-height: 1.4;
 `;
 
 const Heading = (props) => {

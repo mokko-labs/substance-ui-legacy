@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import Loader from '../Misc/Loader';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const ListWrap = styled.div`
   list-style: none;
@@ -64,6 +64,9 @@ const ListWrap = styled.div`
           background: ${props => props.theme.colors.primary};
           border-color: ${props => props.theme.colors.primary};
           color:white;
+        }
+        &.disabled {
+          opacity: 0.3;
         }
       }
       a {

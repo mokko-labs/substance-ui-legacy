@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 import { VictoryChart, VictoryArea, VictoryStack, VictoryScatter, VictoryTooltip } from 'victory';
 import chartTheme from './chartTheme';
 import { darken } from 'polished';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const StackChart = (props) => {
 

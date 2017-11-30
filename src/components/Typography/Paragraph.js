@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 
 const Paragraph = styled.p`
   font-family: ${props => props.theme.fonts.paragraph || 'sans-serif'};
@@ -8,6 +8,10 @@ const Paragraph = styled.p`
   padding:0;
   font-weight:${props => props.weight || 'normal'};
   letter-spacing: 0.7px;
+  strong {
+    color:${props => props.color ? props.color : props.theme.colors.heading || '#000'};
+    letter-spacing: 0.4px;
+  }
   font-size: ${props => {
     switch (props.size){
       case 'x-small':

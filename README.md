@@ -1,6 +1,20 @@
-# [Substance-UI](http://substance.mokko.surge.sh/)
+# [Substance-UI](https://mokko-lab.github.io/substance-demo/)
 
 > A Beautiful, reusable [React](http://facebook.github.io/react/) UI component library.
+
+## Documentation
+
+You can read more about Substance UI components & integration [here](hhttps://mokko-lab.github.io/substance-demo/)
+
+**Stable channel**
+```sh
+npm install substance-ui
+```
+
+## Demo
+
+Check out the demo [here](hhttps://mokko-lab.github.io/substance-demo/)
+
 
 ## Installation
 
@@ -30,10 +44,6 @@ function App() {
 
 render(<App />, document.querySelector('#app'));
 ```
-
-## Examples
-
-Check out the demo [here](http://substance.mokko.surge.sh/)
 
 
 ## License

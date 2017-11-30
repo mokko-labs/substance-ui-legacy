@@ -36,6 +36,36 @@ const Split = styled.div`
       flex: 100%;
     }
   }
+  &>div:nth-child(4) {
+    flex: ${(props)=>props.ratio ? (100/_.sum(props.ratio)) * props.ratio[3]+'%' : 1};
+    @media (max-width: 1200px) {
+      flex: 100%;
+    }
+  }
+  &>div:nth-child(5) {
+    flex: ${(props)=>props.ratio ? (100/_.sum(props.ratio)) * props.ratio[4]+'%' : 1};
+    @media (max-width: 1200px) {
+      flex: 100%;
+    }
+  }
+  &>div:nth-child(6) {
+    flex: ${(props)=>props.ratio ? (100/_.sum(props.ratio)) * props.ratio[5]+'%' : 1};
+    @media (max-width: 1200px) {
+      flex: 100%;
+    }
+  }
+  &>div:nth-child(7) {
+    flex: ${(props)=>props.ratio ? (100/_.sum(props.ratio)) * props.ratio[6]+'%' : 1};
+    @media (max-width: 1200px) {
+      flex: 100%;
+    }
+  }
+  &>div:nth-child(8) {
+    flex: ${(props)=>props.ratio ? (100/_.sum(props.ratio)) * props.ratio[7]+'%' : 1};
+    @media (max-width: 1200px) {
+      flex: 100%;
+    }
+  }
 `;
 
 const SplitColumn = styled.div`

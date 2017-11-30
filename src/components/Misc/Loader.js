@@ -1,19 +1,15 @@
 import styled, { withTheme } from 'styled-components';
 import React from 'react';
-import Halogen from 'halogen';
-import theme from '../../theme';
+import theme from '../Theme/theme';
+import { ClipLoader } from 'react-spinners';
 
 const Loader = (props) => {
-
-  if (props.type === 'Pulse') {
-    return (
-      <Halogen.PulseLoader color={props.color ? props.color : props.theme.colors.primary} {...props} />
-    );
-  }
-
   return (
-    <Halogen.ClipLoader color={props.color ? props.color : props.theme.colors.primary} {...props} />
-  );
+    <ClipLoader
+          color={props.theme.colors.primary}
+          loading={true}
+        />
+  )
 };
 
 Loader.defaultProps = {

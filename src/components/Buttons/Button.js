@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {darken, lighten, transparentize} from 'polished';
-import theme from '../../theme';
+import theme from '../Theme/theme';
 import {adjustHue} from 'polished';
-import Halogen from 'halogen';
+import { ClipLoader } from 'react-spinners';
+
+
 
 function makeGradient(color) {
   return `linear-gradient(322.34deg, ${color} 0%, ${adjustHue(-10, color)} 100%)`;
@@ -48,7 +50,7 @@ function buttonColoring(props) {
   var selection = props.theme.colors[props.color || 'default'];
 
   return `
-    background: ${makeGradient(selection)};
+    background: ${ (props.color === 'success' || props.color === 'warning' || props.color === 'error') ? selection : makeGradient(selection)};
     color: ${selection === 'default' ? '#333' : 'white'};
 
     &:hover {
@@ -157,7 +159,11 @@ class Button extends React.Component {
           this.state.loading ? (
             <ButtonBase disabled size={this.props.size} alt={this.props.alt} outline={this.props.outline} color={this.props.color} theme={this.props.theme}>
               <div style={{'position':'absolute', 'top':'50%', 'left' : '50%', marginLeft:'-10px', marginTop: '-10px'}}>
-                <Halogen.ClipLoader size={20} color={this.props.color}  />
+                <ClipLoader
+                      color={this.props.color}
+                      size={22}
+                      loading={this.state.loading}
+                    />
               </div>
               <div style={{'opacity' : 0}}>
                 {this.props.children}

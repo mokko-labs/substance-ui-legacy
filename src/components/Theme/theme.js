@@ -8,9 +8,9 @@ const theme = {
     paragraph: '#888888', // Paragraph Text Color
 
     monochrome: '#545454',
-    success: '#93E522', // Success State
-    warning: '#FADB4A', // Warning State
-    error: '#FF3E00', // Error State
+    success: '#50de5b', // Success State
+    warning: '#efd41a', // Warning State
+    error: '#ef5a2a', // Error State
   },
 
   fonts: {
@@ -24,19 +24,6 @@ const theme = {
   },
 
   sidebar: {
-    bg: '#FFFFFF',
-    width: 300,
-
-    links: {
-      padding: '0px 40px',
-      fontSize: 15,
-      fontWeight: 300,
-      lineHeight: '50px',
-      color: '#888888',
-      activeFontSize: 22,
-      activeFontWeight: 800,
-      activeColor: '#313131'
-    },
   },
 
   animations: {
