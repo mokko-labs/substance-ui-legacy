@@ -1,8 +1,10 @@
 
 import Button from './Button';
 import LineLoader from './LineLoader';
+import Card from './Card'
 
-export default {
+export {
   Button,
-  LineLoader
+  LineLoader,
+  Card
 }
