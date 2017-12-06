@@ -30,7 +30,7 @@ const TableWrap = styled.table`
       }
     }
     td {
-      padding: 20px 10px;
+      padding: 12px 10px;
       font-family: ${props => props.theme.fonts.paragraph || 'sans-serif'};
       color:${props => props.color ? props.color : props.theme.colors.paragraph || '#000'};
     }
@@ -59,8 +59,8 @@ const TableWrap = styled.table`
 const TableContainer = styled.div`
   position: relative;
   width: 100%;
-  min-height: 400px;
-  padding-bottom: 80px;
+  min-height: 200px;
+  padding-bottom:  ${props => props.pagination ? '80px' : '0px'};
   .loading-container {
     position: absolute;
     width:100%;
@@ -280,7 +280,7 @@ class Table extends React.Component {
 
   render() {
     return (
-      <TableContainer>
+      <TableContainer pagination={this.props.itemsPerPage ? true : false}>
         {(this.state.isLoading && !this.state.showEmpty) ? (
           <div className="loading-container">
             {this.props.loadingComponent ? this.props.loadingComponent : (<Loader />)}

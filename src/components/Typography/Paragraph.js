@@ -7,10 +7,9 @@ const Paragraph = styled.p`
   margin:${props => props.margin || '0px'};
   padding:0;
   font-weight:${props => props.weight || 'normal'};
-  letter-spacing: 0.7px;
+  letter-spacing: 0.3px;
   strong {
     color:${props => props.color ? props.color : props.theme.colors.heading || '#000'};
-    letter-spacing: 0.4px;
   }
   font-size: ${props => {
     switch (props.size){
@@ -27,7 +26,7 @@ const Paragraph = styled.p`
       case 'xx-large':
         return '2.5em';
       default:
-        return '1em';
+        return '1.250em';
     }
   }};
   line-height:  1.5;

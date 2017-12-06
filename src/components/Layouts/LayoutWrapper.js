@@ -16,6 +16,7 @@ const Sidebar = styled.div`
   bottom: 0;
   z-index: 50;
   min-height: 100vh;
+  overflow: auto;
   box-shadow: ${props => props.shadow ? '0 2px 20px rgba(0,0,0,0.1)' : 'none'};
 `;
 

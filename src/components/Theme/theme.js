@@ -5,7 +5,7 @@ const theme = {
     secondary: '#FFBF00',
 
     heading: '#313131', // Heading Text Color
-    paragraph: '#888888', // Paragraph Text Color
+    paragraph: '#525252', // Paragraph Text Color
 
     monochrome: '#545454',
     success: '#50de5b', // Success State

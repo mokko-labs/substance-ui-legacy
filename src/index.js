@@ -1,7 +1,7 @@
 
 export { Heading, Paragraph } from './components/Typography';
 
-export { LayoutWrapper, SideBarLink, Row, Column, Split, SplitColumn, Panel } from './components/Layouts';
+export { LayoutWrapper, SideBarLink, Row, Column, Split, SplitColumn, Panel, Container } from './components/Layouts';
 
 export { AreaChart, BarChart, StackChart, PieChart } from './components/Charts';
 

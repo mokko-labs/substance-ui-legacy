@@ -3,6 +3,17 @@ import PropTypes from 'prop-types'; // ES6
 import styled from 'styled-components';
 import theme from '../Theme/theme';
 
+const XLarge = styled.h1`
+  font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
+  color:${props => props.color ? props.color : props.theme.colors.heading || '#000'};
+  padding:0;
+  margin:0;
+  font-weight:${props => props.weight || 'bold'};
+  letter-spacing: 0.7px;
+  font-size: 4.3em;
+  line-height: 1;
+`;
+
 const H1 = styled.h1`
   font-family: ${props => props.theme.fonts.heading || 'sans-serif'};
   color:${props => props.color ? props.color : props.theme.colors.heading || '#000'};
@@ -65,6 +76,12 @@ const H6 = styled.h6`
 `;
 
 const Heading = (props) => {
+
+  if (props.type === 'x-large') {
+    return (
+      <XLarge {...props}>{props.children}</XLarge>
+    );
+  }
 
   if (props.type === 'h1') {
     return (

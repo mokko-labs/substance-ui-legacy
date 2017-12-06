@@ -13,7 +13,7 @@ npm install substance-ui
 
 ## Demo
 
-Check out the demo [here](hhttps://mokko-lab.github.io/substance-demo/)
+Check out the demo [here](https://mokko-lab.github.io/substance-demo/)
 
 
 ## Installation
