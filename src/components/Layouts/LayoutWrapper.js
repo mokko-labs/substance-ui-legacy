@@ -65,7 +65,6 @@ class LayoutWrapper extends React.Component {
   handleScroll() {
     var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-    console.log('scrolling' + scrollTop);
     if (scrollTop > 100) {
       this.setState({
         sticky: true
@@ -77,9 +76,6 @@ class LayoutWrapper extends React.Component {
       });
     }
   }
-
-
-
 
   render() {
     return (
